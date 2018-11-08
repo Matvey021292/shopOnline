@@ -1,0 +1,145 @@
+a:2:{s:4:"data";s:2309:"<li class="dropdown ">
+        <a href="category/men">Men</a>
+
+           <ul>
+           <li class="dropdown ">
+        <a href="category/elektronnye">Электронные</a>
+
+           <ul>
+           <li class="dropdown ">
+        <a href="category/casio1">Casio1</a>
+
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/citizen">Citizen</a>
+
+           <ul>
+           <li class="dropdown ">
+        <a href="category/asdasdsadasd">asdasdsadasd</a>
+
+    
+</li>
+
+       </ul>
+    
+</li>
+
+       </ul>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/mehanicheskie">Механические</a>
+
+           <ul>
+           <li class="dropdown ">
+        <a href="category/royal-london">Royal London</a>
+
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/seiko">Seiko</a>
+
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/epos">Epos</a>
+
+    
+</li>
+
+       </ul>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/asd">asd</a>
+
+    
+</li>
+
+       </ul>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/women">Women</a>
+
+           <ul>
+           <li class="dropdown ">
+        <a href="category/elektronnye-11">Электронные</a>
+
+           <ul>
+           <li class="dropdown ">
+        <a href="category/adriatica">Adriatica</a>
+
+    
+</li>
+
+       </ul>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/mehanicheskie-12">Механические</a>
+
+           <ul>
+           <li class="dropdown ">
+        <a href="category/anne-klein">Anne Klein</a>
+
+    
+</li>
+
+       </ul>
+    
+</li>
+
+       </ul>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/kids">Kids</a>
+
+           <ul>
+           <li class="dropdown ">
+        <a href="category/kids1">kids1</a>
+
+           <ul>
+           <li class="dropdown ">
+        <a href="category/kids2">kids2</a>
+
+    
+</li>
+
+       </ul>
+    
+</li>
+
+       </ul>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/test1">test1</a>
+
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/sddf">sddf</a>
+
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/213123">213123</a>
+
+    
+</li>
+
+";s:8:"end_time";i:1541708481;}
