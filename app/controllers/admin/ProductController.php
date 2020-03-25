@@ -22,23 +22,24 @@ class ProductController extends AppController {
         $count = \R::count('product');
         $pagination = new Pagination($page, $perpage, $count);
         $start = $pagination->getStart();
-        $products = \R::getAll("SELECT product.*, category.title AS cat FROM product JOIN category ON category.id = product.category_id ORDER BY product.title LIMIT $start, $perpage");
+        $products = \R::getAll("SELECT product.*, category.title AS cat FROM product JOIN category ON category.id = product.category_id ORDER BY product.data DESC LIMIT $start, $perpage");
         $this->setMeta('Список товаров');
         $this->set(compact('products', 'pagination', 'count'));
     }
 
     public function addImageAction(){
         if(isset($_GET['upload'])){
-            if($_POST['name'] == 'single'){
-                $wmax = App::$app->getProperty('img_width');
-                $hmax = App::$app->getProperty('img_height');
-            }else{
-                $wmax = App::$app->getProperty('gallery_width');
-                $hmax = App::$app->getProperty('gallery_height');
-            }
+            $wmax = App::$app->getProperty('img_width');
+            $hmax = App::$app->getProperty('img_height');
+            $wmax_min = App::$app->getProperty('img_width_min');
+            $hmax_min = App::$app->getProperty('img_height_min');
+            $wmax_max_min = App::$app->getProperty('gallery_width_max_min');
+            $hmax_max_min = App::$app->getProperty('gallery_height_max_min');
             $name = $_POST['name'];
             $product = new Product();
-            $product->uploadImg($name, $wmax, $hmax);
+            $product->uploadImg($name, $wmax, $hmax, $wmax_min, $hmax_min, $wmax_max_min, $hmax_max_min);
+            debug($product);
+            die;
         }
     }
 
@@ -51,6 +52,7 @@ class ProductController extends AppController {
             $product->attributes['status'] = $product->attributes['status'] ? '1' : '0';
             $product->attributes['hit'] = $product->attributes['hit'] ? '1' : '0';
             $product->getImg();
+
             if(!$product->validate($data)){
                 $product->getErrors();
                 redirect();
@@ -61,10 +63,12 @@ class ProductController extends AppController {
                 $product->editRelatedProduct($id, $data);
                 $product->saveGallery($id);
                 $alias = AppModel::createAlias('product', 'alias', $data['title'], $id);
+
                 $product = \R::load('product', $id);
                 $product->alias = $alias;
                 \R::store($product);
                 $_SESSION['success'] = 'Изменения сохранены';
+
                 redirect();
             }
         }
@@ -79,7 +83,13 @@ class ProductController extends AppController {
         $this->setMeta("Редактирование товара {$product->title}");
         $this->set(compact('product', 'filter', 'related_product', 'gallery','descriptions'));
     }
-
+    public function deleteAction(){
+        $id = $this->getRequestID();
+        $product = \R::load('product', $id);
+        \R::trash($product);
+        $_SESSION['success'] = 'Товар удален';
+        redirect();
+    }
     public function addAction(){
         if(!empty($_POST)){
             $product = new Product();

@@ -1,145 +1,142 @@
-a:2:{s:4:"data";s:2309:"<li class="dropdown ">
-        <a href="category/men">Men</a>
-
+a:2:{s:4:"data";s:6412:"<li class="dropdown ">
+        <a href="category/telefony-i-planshety"><span><img class="image-menu-category" src="images/" alt="">Телефоны и планшеты            <img src="/images/" alt=""></span></a>
            <ul>
-           <li class="dropdown ">
-        <a href="category/elektronnye">Электронные</a>
-
+          <div class="flex-col">
+              <li class="dropdown ">
+        <a href="category/smartfony"><span><img class="image-menu-category" src="images/" alt="">Смартфоны            <img src="/images/" alt=""></span></a>
            <ul>
-           <li class="dropdown ">
-        <a href="category/casio1">Casio1</a>
-
+          <div class="flex-col">
+              <li class="dropdown ">
+        <a href="category/huawei"><span><img class="image-menu-category" src="images/021696719c0fc1f7dbda256176459dd1.svg" alt="">HUAWEI            <img src="/images/021696719c0fc1f7dbda256176459dd1.svg" alt=""></span></a>
     
 </li>
 
 <li class="dropdown ">
-        <a href="category/citizen">Citizen</a>
-
-           <ul>
-           <li class="dropdown ">
-        <a href="category/asdasdsadasd">asdasdsadasd</a>
-
-    
-</li>
-
-       </ul>
-    
-</li>
-
-       </ul>
+        <a href="category/samsung"><span><img class="image-menu-category" src="images/47f0d518d9f1e5a15fd277fc94018122.svg" alt="">SAMSUNG            <img src="/images/47f0d518d9f1e5a15fd277fc94018122.svg" alt=""></span></a>
     
 </li>
 
 <li class="dropdown ">
-        <a href="category/mehanicheskie">Механические</a>
-
-           <ul>
-           <li class="dropdown ">
-        <a href="category/royal-london">Royal London</a>
-
+        <a href="category/xiaomi"><span><img class="image-menu-category" src="images/eb96bd7e325d9a1a842daa421487f63c.svg" alt="">Xiaomi            <img src="/images/eb96bd7e325d9a1a842daa421487f63c.svg" alt=""></span></a>
     
 </li>
 
 <li class="dropdown ">
-        <a href="category/seiko">Seiko</a>
-
+        <a href="category/apple"><span><img class="image-menu-category" src="images/dcadbe366d1d3a80d98aad3a8fb798cd.svg" alt="">APPLE            <img src="/images/dcadbe366d1d3a80d98aad3a8fb798cd.svg" alt=""></span></a>
     
 </li>
 
-<li class="dropdown ">
-        <a href="category/epos">Epos</a>
-
-    
-</li>
-
+          </div>
        </ul>
     
 </li>
 
 <li class="dropdown ">
-        <a href="category/asd">asd</a>
-
-    
-</li>
-
-       </ul>
-    
-</li>
-
-<li class="dropdown ">
-        <a href="category/women">Women</a>
-
+        <a href="category/mobil-nye-telefony"><span><img class="image-menu-category" src="images/" alt="">Мобильные телефоны
+            <img src="/images/" alt=""></span></a>
            <ul>
-           <li class="dropdown ">
-        <a href="category/elektronnye-11">Электронные</a>
+          <div class="flex-col">
+              <li class="dropdown ">
+        <a href="category/nokia"><span><img class="image-menu-category" src="images/" alt="">NOKIA            <img src="/images/" alt=""></span></a>
+    
+</li>
 
+<li class="dropdown ">
+        <a href="category/nomi"><span><img class="image-menu-category" src="images/" alt="">NOMI            <img src="/images/" alt=""></span></a>
+    
+</li>
+
+          </div>
+       </ul>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/planshety"><span><img class="image-menu-category" src="images/" alt="">Планшеты            <img src="/images/" alt=""></span></a>
            <ul>
-           <li class="dropdown ">
-        <a href="category/adriatica">Adriatica</a>
-
+          <div class="flex-col">
+              <li class="dropdown ">
+        <a href="category/lenovo"><span><img class="image-menu-category" src="images/" alt="">LENOVO            <img src="/images/" alt=""></span></a>
     
 </li>
 
+          </div>
        </ul>
     
 </li>
 
 <li class="dropdown ">
-        <a href="category/mehanicheskie-12">Механические</a>
+        <a href="category/elektronnye-knigi"><span><img class="image-menu-category" src="images/" alt="">Электронные книги            <img src="/images/" alt=""></span></a>
+    
+</li>
 
+<li class="dropdown ">
+        <a href="category/naushniki"><span><img class="image-menu-category" src="images/" alt="">Наушники            <img src="/images/" alt=""></span></a>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/aksessuary"><span><img class="image-menu-category" src="images/" alt="">Аксессуары            <img src="/images/" alt=""></span></a>
            <ul>
-           <li class="dropdown ">
-        <a href="category/anne-klein">Anne Klein</a>
-
-    
-</li>
-
-       </ul>
-    
-</li>
-
-       </ul>
+          <div class="flex-col">
+              <li class="dropdown ">
+        <a href="category/universal-nye-mobil-nye-batarei"><span><img class="image-menu-category" src="images/" alt="">Универсальные мобильные батареи            <img src="/images/" alt=""></span></a>
     
 </li>
 
 <li class="dropdown ">
-        <a href="category/kids">Kids</a>
-
-           <ul>
-           <li class="dropdown ">
-        <a href="category/kids1">kids1</a>
-
-           <ul>
-           <li class="dropdown ">
-        <a href="category/kids2">kids2</a>
-
+        <a href="category/monopody"><span><img class="image-menu-category" src="images/" alt="">Моноподы            <img src="/images/" alt=""></span></a>
     
 </li>
 
+<li class="dropdown ">
+        <a href="category/zaryadnye-ustroystva"><span><img class="image-menu-category" src="images/" alt="">Зарядные устройства            <img src="/images/" alt=""></span></a>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/akkumulyatory-dlya-telefonov"><span><img class="image-menu-category" src="images/" alt="">Аккумуляторы для телефонов            <img src="/images/" alt=""></span></a>
+    
+</li>
+
+          </div>
        </ul>
     
 </li>
 
+          </div>
        </ul>
     
 </li>
 
 <li class="dropdown ">
-        <a href="category/test1">test1</a>
-
+        <a href="category/televizory-i-video"><span><img class="image-menu-category" src="images/9cf249b41b3e4be158ad9c0444c980fa.svg" alt="">Телевизоры и видео            <img src="/images/9cf249b41b3e4be158ad9c0444c980fa.svg" alt=""></span></a>
     
 </li>
 
 <li class="dropdown ">
-        <a href="category/sddf">sddf</a>
-
+        <a href="category/noutbuki-i-komp-yutery"><span><img class="image-menu-category" src="images/3c64350b26d65d3a50d057bfb6c53284.svg" alt="">Ноутбуки и компьютеры            <img src="/images/3c64350b26d65d3a50d057bfb6c53284.svg" alt=""></span></a>
     
 </li>
 
 <li class="dropdown ">
-        <a href="category/213123">213123</a>
-
+        <a href="category/foto-i-videokamery"><span><img class="image-menu-category" src="images/49d2ee01318aac618d2a4e9622bbc0fc.svg" alt="">Фото и видеокамеры            <img src="/images/49d2ee01318aac618d2a4e9622bbc0fc.svg" alt=""></span></a>
     
 </li>
 
-";s:8:"end_time";i:1541708481;}
+<li class="dropdown ">
+        <a href="category/tehnika-dlya-kuhni"><span><img class="image-menu-category" src="images/68bf6c456695114a420c9278d6b4694b.svg" alt="">Техника для кухни            <img src="/images/68bf6c456695114a420c9278d6b4694b.svg" alt=""></span></a>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/tehnika-dlya-doma"><span><img class="image-menu-category" src="images/8ace8d9788f9f02e972ce947ca099b8d.svg" alt="">Техника для дома            <img src="/images/8ace8d9788f9f02e972ce947ca099b8d.svg" alt=""></span></a>
+    
+</li>
+
+<li class="dropdown ">
+        <a href="category/krasota-i-zdorov-e"><span><img class="image-menu-category" src="images/a74f457e6198f29961fe744931b8832e.svg" alt="">Красота и здоровье            <img src="/images/a74f457e6198f29961fe744931b8832e.svg" alt=""></span></a>
+    
+</li>
+
+";s:8:"end_time";i:1585134058;}

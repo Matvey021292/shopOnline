@@ -49,6 +49,15 @@ class Category extends AppModel
         }
     }
 
+    public static function getSort()
+    {
+        $sort = null;
+        if (!empty($_GET['sort'])) {
+            $sort = preg_replace('[^A-Za-z0-9?! ]', '', $_GET['sort']);
+            $sort = trim($sort, ',');
+        }
+        return $sort;
+    }
 
     public function uploadImg($name, $wmax, $hmax){
 

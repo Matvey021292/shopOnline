@@ -51,6 +51,7 @@ class Cart extends AppModel
                 'alias' => $product->alias,
                 'price' => $price * $_SESSION['cart.currency']['value'],
                 'img' => $product->img,
+                'old_price' =>  $product->old_price * $_SESSION['cart.currency']['value'],
             ];
         }
         $_SESSION['cart.qty'] = isset($_SESSION['cart.qty']) ? $_SESSION['cart.qty'] + $qty : $qty;

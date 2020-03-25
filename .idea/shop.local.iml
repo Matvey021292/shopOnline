@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="app\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/gabordemooij/redbean" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/rosell-dk/webp-convert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/shop/core" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vlucas/valitron" />

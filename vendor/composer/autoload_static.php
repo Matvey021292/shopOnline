@@ -19,6 +19,10 @@ class ComposerStaticInitc7812cbb21b86a2b71afab3632cd5b77
         array (
             'app\\' => 4,
         ),
+        'W' => 
+        array (
+            'WebPConvert\\' => 12,
+        ),
         'V' => 
         array (
             'Valitron\\' => 9,
@@ -37,6 +41,10 @@ class ComposerStaticInitc7812cbb21b86a2b71afab3632cd5b77
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
+        ),
+        'WebPConvert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/rosell-dk/webp-convert/src',
         ),
         'Valitron\\' => 
         array (

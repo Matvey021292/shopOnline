@@ -8,8 +8,10 @@
 
 namespace app\models\admin;
 
-
 use app\models\AppModel;
+use WebPConvert\Loggers\EchoLogger;
+use WebPConvert\WebPConvert;
+
 
 class Product extends AppModel
 {
@@ -22,8 +24,10 @@ class Product extends AppModel
         'old_price' => '',
         'content' => '',
         'hit' => '',
-        'status' => '',
-        'alias' => ''
+        'status' => '0',
+        'alias' => '',
+        'sale' => '',
+        'brand_id' => '0'
     ];
 
     public $rules = [
@@ -143,33 +147,41 @@ class Product extends AppModel
         }
     }
 
-    public function uploadImg($name, $wmax, $hmax)
+    public function uploadImg($name, $wmax, $hmax, $wmax_min, $hmax_min, $wmax_max_min, $hmax_max_min)
     {
-        $uploaddir = WWW . '/images/';
+
+        $upload_dir = WWW . '/images/';
         $ext = strtolower(preg_replace("#.+\.([a-z]+)$#i", "$1", $_FILES[$name]['name'])); // расширение картинки
-        $types = array("image/gif", "image/png", "image/jpeg", "image/pjpeg", "image/x-png"); // массив допустимых расширений
+        $types = array('image/gif', 'image/png', 'image/jpeg', 'image/pjpeg', 'image/x-png'); // массив допустимых расширений
         if ($_FILES[$name]['size'] > 1048576) {
-            $res = array("error" => "Ошибка! Максимальный вес файла - 1 Мб!");
+            $res = array('error' => 'Ошибка! Максимальный вес файла - 1 Мб!');
             exit(json_encode($res));
         }
         if ($_FILES[$name]['error']) {
-            $res = array("error" => "Ошибка! Возможно, файл слишком большой.");
+            $res = array('error' => 'Ошибка! Возможно, файл слишком большой.');
             exit(json_encode($res));
         }
         if (!in_array($_FILES[$name]['type'], $types)) {
-            $res = array("error" => "Допустимые расширения - .gif, .jpg, .png");
+            $res = array('error' => 'Допустимые расширения - .gif, .jpg, .png');
             exit(json_encode($res));
         }
         $new_name = md5(time()) . ".$ext";
-        $uploadfile = $uploaddir . $new_name;
-        if (@move_uploaded_file($_FILES[$name]['tmp_name'], $uploadfile)) {
-            if ($name == 'single') {
+        $upload_file = $upload_dir . $new_name;
+        $upload_file_single = $upload_dir . md5(time()) . "_single.$ext";
+        $upload_file_min = $upload_dir . md5(time()) . "_min.$ext";
+        $upload_file_max_min = $upload_dir . md5(time()) . "_max_min.$ext";
+        if (@move_uploaded_file($_FILES[$name]['tmp_name'], $upload_file)) {
+            if ($name === 'single') {
                 $_SESSION['single'] = $new_name;
             } else {
                 $_SESSION['multi'][] = $new_name;
             }
-            self::resize($uploadfile, $uploadfile, $wmax, $hmax, $ext);
-            $res = array("file" => $new_name);
+
+            $success = WebPConvert::convert($upload_file, preg_replace('/\\.[^.\\s]{3,4}$/','',$upload_file).'.webp');
+            self::resize($upload_file, $upload_file_single, $wmax, $hmax, $ext);
+            self::resize($upload_file, $upload_file_min, $wmax_min, $hmax_min, $ext);
+            self::resize($upload_file, $upload_file_max_min, $wmax_max_min, $hmax_max_min, $ext);
+            $res = array('file' => $new_name);
             exit(json_encode($res));
         }
     }
@@ -185,7 +197,6 @@ class Product extends AppModel
     {
         list($w_orig, $h_orig) = getimagesize($target);
         $ratio = $w_orig / $h_orig; // =1 - квадрат, <1 - альбомная, >1 - книжная
-
         if (($wmax / $hmax) > $ratio) {
             $wmax = $hmax * $ratio;
         } else {
@@ -216,12 +227,16 @@ class Product extends AppModel
         switch ($ext) {
             case("gif"):
                 imagegif($newImg, $dest);
+                $success = WebPConvert::convert($dest, preg_replace('/\\.[^.\\s]{3,4}$/','',$dest).'.webp');
                 break;
             case("png"):
                 imagepng($newImg, $dest);
+                $success = WebPConvert::convert($dest, preg_replace('/\\.[^.\\s]{3,4}$/','',$dest).'.webp');
                 break;
             default:
                 imagejpeg($newImg, $dest);
+                $success = WebPConvert::convert($dest, preg_replace('/\\.[^.\\s]{3,4}$/','',$dest).'.webp');
+
         }
         imagedestroy($newImg);
     }

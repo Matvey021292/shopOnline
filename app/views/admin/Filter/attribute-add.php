@@ -1,15 +1,25 @@
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        Новый фильтр
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="<?=ADMIN;?>"><i class="fa fa-dashboard"></i> Главная</a></li>
-        <li><a href="<?=ADMIN;?>/filter/attribute">Список фильтров</a></li>
-        <li class="active">Новый фильтр</li>
-    </ol>
-</section>
-
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <div class="d-inline">
+                    <h1>
+                        Новый фильтр
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="page-header-breadcrumb">
+                <ul class="breadcrumb-title">
+                    <li class="breadcrumb-item"><a href="<?=ADMIN;?>"><i class="fa fa-dashboard"></i> Главная</a></li>
+                    <li class="breadcrumb-item"><a href="<?=ADMIN;?>/filter/attribute-group"> Группы фильтров</a></li>
+                    <li class="breadcrumb-item active">Новый фильтр</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Main content -->
 <section class="content">
     <div class="row">

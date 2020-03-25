@@ -19,7 +19,7 @@ class Menu{
     protected $menuHtml;
     protected $tpl;
     protected $container = 'ul';
-    protected $class = 'menu';
+    protected $class = 'menu sf-menu sf-vertical';
     protected $table = 'category';
     protected $cache = 3600;
     protected $cacheKey = 'ishop_menu';

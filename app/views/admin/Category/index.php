@@ -1,13 +1,24 @@
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        Список категорий
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="<?php echo ADMIN;?>"><i class="fa fa-dashboard"></i> Главная</a></li>
-        <li class="active">Список категорий</li>
-    </ol>
-</section>
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <div class="d-inline">
+                    <h1>Список категорий</h1>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="page-header-breadcrumb">
+                <ul class="breadcrumb-title">
+                    <li class="breadcrumb-item"><a href="<?php echo ADMIN; ?>"><i
+                                    class="fa fa-dashboard"></i>Главная</a></li>
+                    <li class="breadcrumb-item active">Список категорий</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Main content -->
 <section class="content">
@@ -26,6 +37,9 @@
             </div>
         </div>
     </div>
-
 </section>
+<br>
+<div class="box-header">
+    <a style="color: #fff;" href="<?php echo ADMIN?>/category/add" class="btn btn-success">Добавить категорию</a>
+</div>
 <!-- /.content -->

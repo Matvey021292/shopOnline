@@ -30,7 +30,8 @@ class SearchController extends AppController
             $products = \R::find('product', "title LIKE ? AND status='1'    ", ["%{$query}%"]);
 
         }
+        $hits = \R::find('Product', "hit = '1' AND status = '1' ORDER BY data DESC LIMIT 16  ");
         $this->setMeta('Поиск по: ' . h($query));
-        $this->set(compact('products','query'));
+        $this->set(compact('products','query','hits'));
     }
 }

@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'feather';
+    src: url('feather.eot');
+    src: url('feather.eot?#iefix') format('embedded-opentype'),
+        url('feather.woff2') format('woff2'),
+        url('feather.woff') format('woff'),
+        url('feather.ttf') format('truetype'),
+        url('feather.svg#feather') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

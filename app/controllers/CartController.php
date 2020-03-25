@@ -2,13 +2,40 @@
 
 namespace app\controllers;
 
-use app\models\Cart;
 use app\models\Order;
+use app\models\Cart;
 use app\models\User;
 
 class CartController extends AppController
 {
+    public function replaceAction(){
+        $arr = [
+            'current_price'=>'',
+            'cart_sum' => '',
+            'cart_qty' => '',
+        ];
 
+        $id = !empty($_POST['id']) ? (int)$_POST['id'] : null;
+        $qty = !empty($_POST['qty']) ? (int)$_POST['qty'] : null;
+        if (!empty($_SESSION['cart'])){
+            $_SESSION['cart.sum'] = 0;
+            $_SESSION['cart.qty'] = 0;
+            foreach ($_SESSION['cart'] as $k => $v){
+               if ($k == $id){
+                   $_SESSION['cart'][$k]['qty'] = $qty;
+
+               }
+               $_SESSION['cart.qty'] += $_SESSION['cart'][$k]['qty'];
+               $_SESSION['cart.sum'] += $_SESSION['cart'][$k]['qty'] * $_SESSION['cart'][$k]['price'];
+         }
+          $arr['cart_sum'] = $_SESSION['cart.sum'];
+          $arr['cart_qty'] = $_SESSION['cart.qty'];
+            $arr['current_price'] = $_SESSION['cart'][$id]['qty']*$_SESSION['cart'][$id]['price'];
+           echo json_encode($arr);
+        }
+        die;
+
+    }
     public function addAction()
     {
         $id = !empty($_GET['id']) ? (int)$_GET['id'] : null;

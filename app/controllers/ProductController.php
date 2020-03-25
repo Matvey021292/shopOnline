@@ -25,6 +25,7 @@ class ProductController extends AppController
 
         $related = \R::getAll("SELECT * FROM related_product JOIN product ON product.id = related_product.related_id WHERE related_product.product_id =?", [$product->id]);
         $products_desc = \R::getAll("SELECT * FROM product_desc  WHERE product_desc.product_id =?", [$product->id]);
+        $products_cat = \R::getRow("SELECT * FROM category  WHERE category.id =?", [$product->category_id]);
 
         $p_model = new Product();
         $p_model->setRecentlyViewed($product->id);
@@ -40,7 +41,7 @@ class ProductController extends AppController
 
         $gallery = \R::findAll('gallery', 'product_id = ?', [$product->id]);
         $this->setMeta($product->title, $product->description, $product->keywords);
-        $this->set(compact('product', 'related', 'gallery', 'recentlyViewed', 'breackrumbs', 'mods','products_desc'));
+        $this->set(compact('product', 'related', 'gallery', 'recentlyViewed', 'breackrumbs', 'mods','products_desc','products_cat'));
     }
 
 

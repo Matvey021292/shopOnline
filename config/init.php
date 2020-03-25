@@ -12,7 +12,7 @@ define("LAYOUT", 'ishop');
 
 
 
-define("ADDCART", 'В корзину');
+define("ADDCART", '<i class="fa fa-shopping-cart" aria-hidden="true"></i>');
 
 $app_path = "https://{$_SERVER['HTTP_HOST']}{$_SERVER['PHP_SELF']}";
 $app_path = preg_replace("#[^/]+$#", '', $app_path);

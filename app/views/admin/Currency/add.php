@@ -1,15 +1,25 @@
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        Новая валюта
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="<?= ADMIN; ?>"><i class="fa fa-dashboard"></i> Главная</a></li>
-        <li><a href="<?= ADMIN; ?>/currency">Список валют</a></li>
-        <li class="active">Новая валюта</li>
-    </ol>
-</section>
-
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <div class="d-inline">
+                    <h1>
+                        Новая валюта
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="page-header-breadcrumb">
+                <ul class="breadcrumb-title">
+                    <li class="breadcrumb-item"><a href="<?php echo ADMIN; ?>"><i class="fa fa-dashboard"></i> Главная</a></li>
+                    <li class="breadcrumb-item "><a href="<?= ADMIN ?>/currency">Список валют</a></li>
+                    <li class="breadcrumb-item  active">Новая валюта</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Main content -->
 <section class="content">
     <div class="row">

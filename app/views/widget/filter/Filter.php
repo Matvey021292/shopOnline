@@ -9,6 +9,7 @@
 namespace app\views\widget\filter;
 
 
+use shop\App;
 use shop\Cache;
 
 class Filter
@@ -26,11 +27,20 @@ class Filter
     }
 
     public function run()
+
     {
+
+
         $cache = Cache::instance();
         $this->groups = $cache->get('filter_group');
         if (!$this->groups) {
-            $this->groups = $this->getCroups();
+            $id = $this->getCatId();
+            if ($id){
+                $this->groups = $this->getCroups($id);
+            }else{
+                $this->groups = $this->getCroup();
+            }
+
             $cache->set('filter_group', $this->groups, 1);
         }
         $this->attrs = $cache->get('filter_attrs');
@@ -40,7 +50,10 @@ class Filter
         }
         $filters = $this->getHtml();
         echo $filters;
+
     }
+
+
 
     protected function getHtml()
     {
@@ -53,9 +66,45 @@ class Filter
         return ob_get_clean();
     }
 
-    protected function getCroups()
+    protected function getCroups($id)
     {
-        return \R::getAssoc('SELECT id,title FROM attribute_group');
+        return \R::getAssoc('SELECT id,title  FROM attribute_group WHERE id IN  (SELECT filter_id FROM cat_filter WHERE cat_id = ?)',[$id]);
+    }
+    protected function getCroup()
+    {
+        return \R::getAssoc('SELECT id, title FROM attribute_group');
+    }
+    public function getCatId(){
+        $url='';
+        if (!empty($_GET)){
+            foreach ($_GET as $k => $v){
+                $url.=$k;
+            }
+            $current_cat = basename($url);
+            if ($current_cat){
+                $cat = \R::getCol("SELECT parent_id FROM category WHERE alias = ?",[$current_cat]);
+               if (!empty($cat)){
+                   if($cat[0] != 0){
+                       $id = $this->getCat($cat[0]);
+                   }else{
+                       $id = \R::getCol("SELECT id FROM category WHERE alias = ?",[$current_cat]);
+                   }
+                   return $id[0];
+               }
+            }
+        }
+
+
+    }
+
+    public function getCat($cat){
+        $cats = \R::getCol("SELECT parent_id FROM category WHERE id = ?",[$cat]);
+        if($cats[0]!= 0){
+            $cats = $this->getCat($cats[0]);
+        }else{
+            $cats = \R::getCol("SELECT id FROM category WHERE id = ?",[$cat]);
+        }
+        return $cats;
     }
 
 
@@ -78,6 +127,8 @@ class Filter
         }
         return $filter;
     }
+
+
 
     public static function getCountGroups($filter)
     {

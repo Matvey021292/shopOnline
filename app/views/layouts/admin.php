@@ -1,648 +1,344 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <base href="/adminlte/">
-    <link rel="shortcut icon" href="<?= PATH; ?>/images/star.png" type="image/png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <?= $this->getMeta(); ?>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <meta name="author" content="#">
+    <link rel="icon" href="dist/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <!-- Ionicons -->
-    <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/feather.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="dist/css/icofont.css">
+
     <link rel="stylesheet" href="css.css">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Google Font -->
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
-<body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
-
-    <header class="main-header">
-        <!-- Logo -->
-        <a href="<?php echo PATH ?>" target="_blank" class="logo">
-            <!-- mini logo for sidebar mini 50x50 pixels -->
-            <span class="logo-mini"><b>A</b>LT</span>
-            <!-- logo for regular state and mobile devices -->
-            <span class="logo-lg"><b>Admin</b>LTE</span>
-        </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
-            <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-            </a>
-
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-                    <!-- Messages: style can be found in dropdown.less-->
-                    <li class="dropdown messages-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-envelope-o"></i>
-                            <span class="label label-success">4</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 4 messages</li>
-                            <li>
-                                <!-- inner menu: contains the actual data -->
-                                <ul class="menu">
-                                    <li><!-- start message -->
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user2-160x160.jpg" class="img-circle"
-                                                     alt="User Image">
-                                            </div>
-                                            <h4>
-                                                Support Team
-                                                <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                    <!-- end message -->
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle"
-                                                     alt="User Image">
-                                            </div>
-                                            <h4>
-                                                AdminLTE Design Team
-                                                <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle"
-                                                     alt="User Image">
-                                            </div>
-                                            <h4>
-                                                Developers
-                                                <small><i class="fa fa-clock-o"></i> Today</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user3-128x128.jpg" class="img-circle"
-                                                     alt="User Image">
-                                            </div>
-                                            <h4>
-                                                Sales Department
-                                                <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <div class="pull-left">
-                                                <img src="dist/img/user4-128x128.jpg" class="img-circle"
-                                                     alt="User Image">
-                                            </div>
-                                            <h4>
-                                                Reviewers
-                                                <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                            </h4>
-                                            <p>Why not buy a new awesome theme?</p>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer"><a href="#">See All Messages</a></li>
-                        </ul>
-                    </li>
-                    <!-- Notifications: style can be found in dropdown.less -->
-                    <li class="dropdown notifications-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-bell-o"></i>
-                            <span class="label label-warning">10</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 10 notifications</li>
-                            <li>
-                                <!-- inner menu: contains the actual data -->
-                                <ul class="menu">
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-aqua"></i> 5 new members joined today
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-warning text-yellow"></i> Very long description here that
-                                            may not fit into the
-                                            page and may cause design problems
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-users text-red"></i> 5 new members joined
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-shopping-cart text-green"></i> 25 sales made
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-user text-red"></i> You changed your username
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer"><a href="#">View all</a></li>
-                        </ul>
-                    </li>
-                    <!-- Tasks: style can be found in dropdown.less -->
-                    <li class="dropdown tasks-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="fa fa-flag-o"></i>
-                            <span class="label label-danger">9</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="header">You have 9 tasks</li>
-                            <li>
-                                <!-- inner menu: contains the actual data -->
-                                <ul class="menu">
-                                    <li><!-- Task item -->
-                                        <a href="#">
-                                            <h3>
-                                                Design some buttons
-                                                <small class="pull-right">20%</small>
-                                            </h3>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-aqua" style="width: 20%"
-                                                     role="progressbar"
-                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">20% Complete</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!-- end task item -->
-                                    <li><!-- Task item -->
-                                        <a href="#">
-                                            <h3>
-                                                Create a nice theme
-                                                <small class="pull-right">40%</small>
-                                            </h3>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-green" style="width: 40%"
-                                                     role="progressbar"
-                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">40% Complete</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h3>
-                                                Some task I need to do
-                                                <small class="pull-right">60%</small>
-                                            </h3>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-red" style="width: 60%"
-                                                     role="progressbar"
-                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">60% Complete</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <h3>
-                                                Make beautiful transitions
-                                                <small class="pull-right">80%</small>
-                                            </h3>
-                                            <div class="progress xs">
-                                                <div class="progress-bar progress-bar-yellow" style="width: 80%"
-                                                     role="progressbar"
-                                                     aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                    <span class="sr-only">80% Complete</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="#">View all tasks</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs"> <?php echo $_SESSION['user']['name'] ?></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                                <p><?php echo $_SESSION['user']['name'] ?></p>
-                            </li>
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="<?php echo ADMIN ?>/user/edit?id=<?php echo $_SESSION['user']['id'] ?>"
-                                       class="btn btn-default btn-flat">Profile</a>
+<body>
+<script>
+    var path = "<?php echo PATH;?>";
+    var adminpath = "<?php echo ADMIN;?>";
+</script>
+<div class="theme-loader">
+    <div class="ball-scale">
+        <div class='contain'>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+            <div class="ring">
+                <div class="frame"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="pcoded" class="pcoded">
+    <div class="pcoded-overlay-box"></div>
+    <div class="pcoded-container navbar-wrapper">
+        <nav class="navbar header-navbar pcoded-header">
+            <div class="navbar-wrapper">
+                <div class="navbar-logo">
+                    <a class="mobile-menu" id="mobile-collapse" href="#!">
+                        <i class="feather icon-menu"></i>
+                    </a>
+                    <a href="<?php echo PATH ?>" target="_blank">
+                        <img class="img-fluid"  src="dist/images/logo.png" alt="Theme-Logo" />
+                    </a>
+                    <a class="mobile-options">
+                        <i class="feather icon-more-horizontal"></i>
+                    </a>
+                </div>
+                <div class="navbar-container container-fluid">
+                    <ul class="nav-left">
+                        <li class="header-search">
+                            <div class="main-search morphsearch-search">
+                                <div class="input-group">
+                                    <span class="input-group-addon search-close"><i class="feather icon-x"></i></span>
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon search-btn"><i class="feather icon-search"></i></span>
                                 </div>
-                                <div class="pull-right">
-                                    <a href="/user/logout" class="btn btn-default btn-flat">Sign out</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#!" onclick="javascript:toggleFullScreen()">
+                                <i class="feather icon-maximize full-screen"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav-right">
+                        <li class="user-profile header-notification">
+                            <div class="dropdown-primary dropdown">
+                                <div class="dropdown-toggle" data-toggle="dropdown">
+                                    <img src="dist/images/avatar-4.jpg" class="img-radius" alt="User-Profile-Image">
+                                    <span><?php echo $_SESSION['user']['name'] ?></span>
+                                    <i class="feather icon-chevron-down"></i>
                                 </div>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
-                </ul>
+                                <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                    <li>
+                                        <a href="<?php echo ADMIN ?>/user/edit?id=<?php echo $_SESSION['user']['id'] ?>">
+                                            <i class="feather icon-user"></i> Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="/user/logout">
+                                            <i class="feather icon-log-out"></i> Logout
+                                        </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-    </header>
-    <aside class="main-sidebar">
-        <section class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        <div id="sidebar" class="users p-chat-user showChat">
+            <div class="had-container">
+                <div class="card card_main p-fixed users-main">
+                    <div class="user-box">
+                        <div class="chat-inner-header">
+                            <div class="back_chatBox">
+                                <div class="right-icon-control">
+                                    <input type="text" class="form-control  search-text" placeholder="Search Friend" id="search-friends">
+                                    <div class="form-icon">
+                                        <i class="icofont icofont-search"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
-                <div class="pull-left info">
-                    <p> <?php echo $_SESSION['user']['name'] ?></p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
             </div>
-            <!-- search form -->
-            <form action="#" method="get" class="sidebar-form">
-                <div class="input-group">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
-                    <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-                </div>
-            </form>
-            <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">MAIN NAVIGATION</li>
-                <li class=" ">
-                    <a href="<?php echo ADMIN ?>">
-                        <i class="fa fa-home"></i> <span>Главная</span>
-                        <span class="pull-right-container">
-            </span>
-                    </a>
-                </li>
-                <li class=" ">
-                    <a href="<?php echo ADMIN ?>/order">
-
-                        <i class="fa fa-cart-arrow-down "></i> <span>Заказы</span>
-                        <span class="pull-right-container">
-            </span>
-                    </a>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-list-ul"></i>
-                        <span>Категории</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?php echo ADMIN ?>/category">Список категорий</a></li>
-                        <li><a href="<?php echo ADMIN ?>/category/add"> Добавить категорию</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-dropbox"></i>
-                        <span>Товары</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?php echo ADMIN ?>/product">Список товаров</a></li>
-                        <li><a href="<?php echo ADMIN ?>/product/add"> Добавить товары</a></li>
-                    </ul>
-                </li>
-                <li class="">
-                    <a href="<?php echo ADMIN ?>/cache">
-                        <i class="fa fa-cog "></i> <span>Кэширование</span>
-                        <span class="pull-right-container">
-            </span>
-                    </a>
-                </li>
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-user"></i>
-                        <span>Пользователи</span>
-                        <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?php echo ADMIN ?>/user">Список пользователей</a></li>
-                        <li><a href="<?php echo ADMIN ?>/user/add">Добавить пользователя</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-usd"></i> <span>Валюты</span>
-                        <span class="pull-right-container">
-<i class="fa fa-angle-left pull-right"></i>
-</span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?= ADMIN ?>/currency">Список валют</a></li>
-                        <li><a href="<?= ADMIN ?>/currency/add">Добавить валюту</a></li>
-                    </ul>
-                </li>
-                <li class="treeview">
-                    <a href="#"><i class="fa fa-filter"></i> <span>Фильтры</span>
-                        <span class="pull-right-container">
-<i class="fa fa-angle-left pull-right"></i>
-</span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li><a href="<?= ADMIN ?>/filter/attribute-group">Группы фильтров</a></li>
-                        <li><a href="<?= ADMIN ?>/filter/group-add">Добавить группу фильтров</a></li>
-                        <li><a href="<?= ADMIN ?>/filter/attribute">Фильтры</a></li>
-                        <li><a href="<?= ADMIN ?>/filter/attribute-add">Добавить фильтр</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </section>
-    </aside>
-    <script>
-        var path = "<?php echo PATH;?>";
-        var adminpath = "<?php echo ADMIN;?>";
-    </script>
-    <div class="content-wrapper">
-
-
-        <?php if (isset($_SESSION['error'])) { ?>
-            <div class="alert alert-danger">
-                <?php echo $_SESSION['error'];
-                unset($_SESSION['error']); ?>
-            </div>
-        <?php } ?>
-        <?php if (isset($_SESSION['success'])) { ?>
-            <div class="alert alert-success">
-                <?php echo $_SESSION['success'];
-                unset($_SESSION['success']); ?>
-            </div>
-        <?php } ?>
-
-
-
-        <?php echo $content; ?>
-    </div>
-    <!-- /.content-wrapper -->
-<!--    <footer class="main-footer">-->
-<!--        <div class="pull-right hidden-xs">-->
-<!--            <b>Version</b> 2.4.0-->
-<!--        </div>-->
-<!--        <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights-->
-<!--        reserved.-->
-<!--    </footer>-->
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <!-- Home tab content -->
-            <div class="tab-pane" id="control-sidebar-home-tab">
-                <h3 class="control-sidebar-heading">Recent Activity</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                                <p>Will be 23 on April 24th</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-user bg-yellow"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                                <p>New phone +1(800)555-1234</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                                <p>nora@example.com</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                                <p>Execution time 5 seconds</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
-
-                <h3 class="control-sidebar-heading">Tasks Progress</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Custom Template Design
-                                <span class="label label-danger pull-right">70%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Update Resume
-                                <span class="label label-success pull-right">95%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Laravel Integration
-                                <span class="label label-warning pull-right">50%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <h4 class="control-sidebar-subheading">
-                                Back End Framework
-                                <span class="label label-primary pull-right">68%</span>
-                            </h4>
-
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
-
-            </div>
-            <!-- /.tab-pane -->
-            <!-- Stats tab content -->
-            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-            <!-- /.tab-pane -->
-            <!-- Settings tab content -->
-            <div class="tab-pane" id="control-sidebar-settings-tab">
-                <form method="post">
-                    <h3 class="control-sidebar-heading">General Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Report panel usage
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Some information about this general settings option
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Allow mail redirect
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Other sets of options are available
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Expose author name in posts
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-
-                        <p>
-                            Allow the user to show his name in blog posts
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Show me as online
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Turn off notifications
-                            <input type="checkbox" class="pull-right">
-                        </label>
-                    </div>
-                    <!-- /.form-group -->
-
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Delete chat history
-                            <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-                        </label>
-                    </div>
-                    <!-- /.form-group -->
-                </form>
-            </div>
-            <!-- /.tab-pane -->
         </div>
-    </aside>
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-         immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
-</div>
 
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="/js/ajaxupload.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Sidebar inner chat end-->
+        <div class="pcoded-main-container">
+            <div class="pcoded-wrapper">
+                <nav class="pcoded-navbar">
+                    <div class="pcoded-inner-navbar main-menu">
+                        <div class="pcoded-navigatio-lavel">Меню</div>
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li>
+                                <a href="<?php echo ADMIN ?>">
+                                    <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                                    <span class="pcoded-mtext">Главная</span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="<?php echo ADMIN ?>/order">
+                                    <span class="pcoded-micon"><i class="feather icon-shopping-cart"></i></span>
+                                    <span class="pcoded-mtext">Заказы</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="pcoded-navigatio-lavel">Категории</div>
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li class="pcoded-hasmenu">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="feather icon-box"></i></span>
+                                    <span class="pcoded-mtext" >Категории</span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class=" ">
+                                        <a href="<?php echo ADMIN ?>/category">
+                                            <span class="pcoded-mtext" >Список категорий</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="<?php echo ADMIN ?>/category/add">
+                                            <span class="pcoded-mtext" >Добавить категорию</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="pcoded-hasmenu">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="feather icon-package"></i></span>
+                                    <span class="pcoded-mtext">Товары</span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class=" ">
+                                        <a href="<?php echo ADMIN ?>/product">
+                                            <span class="pcoded-mtext" >Список товаров</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="<?php echo ADMIN ?>/product/add">
+                                            <span class="pcoded-mtext" >Новый товар</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <div class="pcoded-navigatio-lavel">Пользователи</div>
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li class="pcoded-hasmenu ">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="feather icon-users"></i></span>
+                                    <span class="pcoded-mtext" >Пользователи</span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class="">
+                                        <a href="<?php echo ADMIN ?>/user">
+                                            <span class="pcoded-mtext" >Список пользователей</span>
+                                        </a>
+                                    </li>
+                                    <li class="">
+                                        <a href="<?php echo ADMIN ?>/user/add">
+                                            <span class="pcoded-mtext" >Новый пользователь</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="pcoded-navigatio-lavel">Фильтры</div>
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li class="pcoded-hasmenu">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="feather icon-filter"></i></span>
+                                    <span class="pcoded-mtext" >Фильтры</span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class=" ">
+                                        <a  href="<?= ADMIN ?>/filter/attribute-group">
+                                            <span class="pcoded-mtext" >Группы фильтров</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="<?php echo ADMIN ?>/filter/group-add">
+                                            <span class="pcoded-mtext" >Добавить группу</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a  href="<?= ADMIN ?>/filter/attribute">
+                                            <span class="pcoded-mtext" >Фильтры</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a  href="<?php echo ADMIN ?>/filter/attribute-add"">
+                                            <span class="pcoded-mtext" >Добавить фильтр</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="pcoded-navigatio-lavel">Настройки</div>
+                        <ul class="pcoded-item pcoded-left-item">
+                            <li class=" ">
+                                <a href="<?php echo ADMIN ?>/cache">
+                                    <span class="pcoded-micon"><i class="feather icon-layers"></i><b>A</b></span>
+                                    <span class="pcoded-mtext" >Кэширование</span>
+                                </a>
+                            </li>
+                            <li class="pcoded-hasmenu">
+                                <a href="javascript:void(0)">
+                                    <span class="pcoded-micon"><i class="feather icon-corner-up-right"></i></span>
+                                    <span class="pcoded-mtext" >Валюты</span>
+                                </a>
+                                <ul class="pcoded-submenu">
+                                    <li class=" ">
+                                        <a href="<?= ADMIN ?>/currency">
+                                            <span class="pcoded-mtext" >Валюты</span>
+                                        </a>
+                                    </li>
+                                    <li class=" ">
+                                        <a href="<?= ADMIN ?>/currency/add">
+                                            <span class="pcoded-mtext" >Новая валюта</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="pcoded-content">
+                    <div class="pcoded-inner-content">
+                        <div class="main-body">
+                            <div class="page-wrapper">
+                                <div class="page-body">
+                                        <?php if (isset($_SESSION['error'])) { ?>
+                                            <div class="alert alert-danger">
+                                                <?php echo $_SESSION['error'];
+                                                unset($_SESSION['error']); ?>
+                                            </div>
+                                        <?php } ?>
+                                        <?php if (isset($_SESSION['success'])) { ?>
+                                            <div class="alert alert-success">
+                                                <?php echo $_SESSION['success'];
+                                                unset($_SESSION['success']); ?>
+                                            </div>
+                                        <?php } ?>
+                                        <?php echo $content; ?>
+<!--                                        --><?php
+//                                        $logs = \R::getDatabaseAdapter()
+//                                            ->getDatabase()
+//                                            ->getLogger();
+//
+//                                        debug($logs->grep('SELECT'));
+//                                        ?>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="dist/js/jquery.min.js"></script>
+<script src="dist/js/ajaxupload.js"></script>
+<script src="dist/js/switchery.min.js"></script>
+
 <script src="bower_components/select2/dist/js/select2.full.js"></script>
-<script src="/js/validator.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script type="text/javascript" src="dist/js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="dist/js/popper.min.js"></script>
+<script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="dist/js/jquery.slimscroll.js"></script>
+<script type="text/javascript" src="dist/js/modernizr.js"></script>
+<script type="text/javascript" src="dist/js/Chart.js"></script>
+<script src="dist/js/amcharts.js"></script>
+<script src="dist/js/serial.js"></script>
+<script src="dist/js/light.js"></script>
+<script src="dist/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="dist/js/SmoothScroll.js"></script>
+<script src="dist/js/pcoded.min.js"></script>
+<script src="dist/js/vartical-layout.min.js"></script>
+<script src="dist/js/swithces.js"></script>
+<script type="text/javascript" src="dist/js/custom-dashboard.js"></script>
+<script type="text/javascript" src="dist/js/script.min.js"></script>
 <script src="bower_components/ckeditor/ckeditor.js"></script>
-<script src="bower_components/ckeditor/adapters/jquery.js"></script>
 <script src="js.js"></script>
 
-<?php
-$logs = \R::getDatabaseAdapter()
-    ->getDatabase()
-    ->getLogger();
-
-debug($logs->grep('SELECT'));
-?>
 </body>
 </html>

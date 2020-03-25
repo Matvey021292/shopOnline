@@ -3,17 +3,17 @@ $('.delete').click(function () {
     if (!res) return false;
 })
 
-$(document).ready(function(){
-    var i=1;
-    $('#add_place').click(function(){
+$(document).ready(function () {
+    var i = 1;
+    $('#add_place').click(function () {
         console.log(1);
         i++;
-        $('#dynamic_field').append('<tr id="row'+i+'"><td><input type="text" name="titleDesc[]" placeholder="Наименование характеристики" class="form-control name_list" /><br><textarea class="w-100" name="descriptionDesc[]"   placeholder="Описание характеристики" rows="5"></textarea></td><td><button type="button" name="remove" id="'+i+'" class="btn btn-danger btn_remove">X</button></td></tr>');
+        $('#dynamic_field').append('<div class="row mw-100 m-0 mt-3" id="row' + i + '"><div class="col-md-6 pl-0"><input type="text" name="titleDesc[]" placeholder="Наименование характеристики" class="form-control name_list" /><br><textarea class="w-100" name="descriptionDesc[]"   placeholder="Описание характеристики" rows="5"></textarea></div><div class="col-md-2 pl-0"><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove ">X</button></div></div>');
     });
 
-    $(document).on('click', '.btn_remove', function(){
+    $(document).on('click', '.btn_remove', function () {
         var button_id = $(this).attr("id");
-        $('#row'+button_id+'').remove();
+        $('#row' + button_id + '').remove();
     });
 
     // $('#submit').click(function(){
@@ -44,7 +44,6 @@ $('.del-item').on('click', function () {
         method: "POST",
         beforeSend: function () {
             $this.closest('.file-upload').find('.overlay').css('display', 'block');
-
         },
         success: function (res) {
             setTimeout(function () {
@@ -103,15 +102,18 @@ $(".select2").select2({
     }
 });
 
-
+if ($('div').is('#home')) {
+    buttonMulti = $("#multi"),
+        file
+}
 if ($('div').is('#single')) {
     var buttonSingle = $("#single"),
-        buttonMulti = $("#multi"),
         buttonSingleMin = $("#single-min"),
+        buttonMulti = $("#multi"),
         file;
 }
 
-if (buttonSingle) {
+if ($(buttonSingle).length > 0) {
     new AjaxUpload(buttonSingle, {
         action: adminpath + buttonSingle.data('url') + "?upload=1",
         data: {name: buttonSingle.data('name')},
@@ -134,7 +136,8 @@ if (buttonSingle) {
         }
     });
 }
-if (buttonSingleMin) {
+
+if ($(buttonSingleMin).length > 0) {
     new AjaxUpload(buttonSingleMin, {
         action: adminpath + buttonSingleMin.data('url') + "?upload=1",
         data: {name: buttonSingleMin.data('name')},
@@ -158,7 +161,7 @@ if (buttonSingleMin) {
     });
 }
 
-if (buttonMulti) {
+if ($(buttonMulti).length > 0) {
     new AjaxUpload(buttonMulti, {
         action: adminpath + buttonMulti.data('url') + "?upload=1",
         data: {name: buttonMulti.data('name')},
@@ -169,7 +172,6 @@ if (buttonMulti) {
                 return false;
             }
             buttonMulti.closest('.file-upload').find('.overlay').css({'display': 'block'});
-
         },
         onComplete: function (file, response) {
             setTimeout(function () {
@@ -182,6 +184,7 @@ if (buttonMulti) {
     });
 }
 
+
 $('#add').on('submit', function () {
     if (!isNumeric($('#category_id').val())) {
         alert('Выберите категорию');
@@ -193,4 +196,24 @@ function isNumeric(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
+
+$('#category_id').change(function () {
+    $.ajax({
+        url: adminpath + "/filter/cat-product",
+        data: {id: $('option:selected').val()},
+        type: 'POST',
+
+    })
+})
+
+$(document).ready(function () {
+    if ($('#old_price').val() !== '' || $('#old_price').val() !== '') {
+        $('#sale').val((100 - (+$('#price').val()) * 100 / (+$('#old_price').val()) > 0) ? (100 - (+$('#price').val()) * 100 / (+$('#old_price').val())).toFixed(0) : '0');
+    }
+});
+$(document).on('keyup', '#old_price,#price', function () {
+    if ($('#old_price').val() !== '' || $('#old_price').val() !== '') {
+        $('#sale').val((100 - (+$('#price').val()) * 100 / (+$('#old_price').val()) > 0) ? (100 - (+$('#price').val()) * 100 / (+$('#old_price').val())).toFixed(0) : '0');
+    }
+});
 

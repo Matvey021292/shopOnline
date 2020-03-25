@@ -25,12 +25,13 @@ class UserController extends AppController
             } else {
                 $user->attributes['password'] = password_hash($user->attributes['password'], PASSWORD_DEFAULT);
                 if ($user->save('user')) {
-                    $_SESSION['success'] = 'Пользователь зарегистрирован';
+                    echo 200;
                 } else {
-                    $_SESSION['error'] = 'Ошибка';
+                    echo 'Ошибка';
                 }
             }
-            redirect();
+//            redirect();
+        die;
         }
         $this->setMeta('Регистрация');
 
@@ -42,17 +43,19 @@ class UserController extends AppController
             $user = new User();
             if ($user->login()) {
                 $_SESSION['success'] = 'Вы успешно авторизованы';
+                echo 200;
             } else {
                 $_SESSION['error'] = 'Логин или пароль введен не верно';
+                echo 400;
             }
-            redirect();
+            die;
         }
         $this->setMeta('Вход');
     }
 
     public function logoutAction()
     {
-        if(isset($_SESSION['user'])){
+        if (isset($_SESSION['user'])) {
             unset($_SESSION['user']);
         }
         redirect();

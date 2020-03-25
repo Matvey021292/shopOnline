@@ -1,13 +1,22 @@
-<section class="content-header">
-    <h1>
-        Список пользователей
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="<?php echo ADMIN; ?>"><i class="fa fa-dashboard"></i>Главная</a></li>
-        <li class="active"> Список пользователей</li>
-    </ol>
-</section>
-
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <div class="d-inline">
+                    <h1>   Список пользователей</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="page-header-breadcrumb">
+                <ul class="breadcrumb-title">
+                    <li class="breadcrumb-item"><a href="<?php echo ADMIN; ?>"><i class="fa fa-dashboard"></i> Главная</a></li>
+                    <li class="breadcrumb-item active">Список пользователей</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <section class="content">
     <div class="row">
         <div class="col-md-12">
@@ -23,6 +32,7 @@
                                 <th>Имя</th>
                                 <th>Роль</th>
                                 <th>Телефон</th>
+                                <th>Адрес</th>
                                 <th>Действия</th>
                             </tr>
                             </thead>
@@ -39,9 +49,14 @@
                                         <td><?php echo $user->name ?></td>
                                         <td><?php echo $user->role ?></td>
                                         <td><?php echo $user->address ?></td>
+                                        <th>Адрес</th>
                                         <td>
-                                            <a href="<?php echo ADMIN ?>/user/edit?id=<?php echo $user->id; ?>"><i
-                                                        class="fa fa-fw fa-eye"></i></a>
+                                            <div class="tabledit-toolbar btn-toolbar" style="text-align: left;">
+                                                <div class="btn-group btn-group-sm" style="float: none;">
+                                                    <a href="<?php echo ADMIN ?>/user/edit?id=<?php echo $user->id; ?>"class="tabledit-edit-button btn btn-primary waves-effect waves-light" style="float: none;margin: 5px;"><span class="icofont icofont-ui-edit"></span></a>
+                                                </div>
+                                            </div>
+
                                         </td>
                                     </tr>
                                 <?php }
@@ -53,7 +68,9 @@
                         </table>
                     </div>
                     <div class="text-center">
-                        <?php echo count($users) ?>
+                        Всего пользователей: <?php echo count($users) ?>
+                        <br>
+                        <br>
                         <?php if ($pagination->countPages > 1) {
                             echo $pagination;
                         } ?>

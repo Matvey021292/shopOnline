@@ -7,6 +7,7 @@
       <path value="$PROJECT_DIR$/vendor/gabordemooij/redbean" />
       <path value="$PROJECT_DIR$/vendor/vlucas/valitron" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/rosell-dk/webp-convert" />
     </include_path>
   </component>
 </project>

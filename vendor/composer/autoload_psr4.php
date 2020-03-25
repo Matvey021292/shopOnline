@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'shop\\' => array($vendorDir . '/shop/core'),
     'app\\' => array($baseDir . '/app'),
+    'WebPConvert\\' => array($vendorDir . '/rosell-dk/webp-convert/src'),
     'Valitron\\' => array($vendorDir . '/vlucas/valitron/src/Valitron'),
     'RedBeanPHP\\' => array($vendorDir . '/gabordemooij/redbean/RedBeanPHP'),
 );

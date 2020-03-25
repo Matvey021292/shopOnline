@@ -1,19 +1,30 @@
-<!-- Content Header (Page header) -->
-<section class="content-header">
-    <h1>
-        Новая категория
-    </h1>
-    <ol class="breadcrumb">
-        <li><a href="<?php echo ADMIN;?>"><i class="fa fa-dashboard"></i> Главная</a></li>
-        <li><a href="<?php echo ADMIN;?>/category">Список категорий</a></li>
-        <li class="active">Новая категория</li>
-    </ol>
-</section>
 
+<div class="page-header">
+    <div class="row align-items-end">
+        <div class="col-lg-8">
+            <div class="page-header-title">
+                <div class="d-inline">
+                    <h1>
+                        Новая категория
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="page-header-breadcrumb">
+                <ul class="breadcrumb-title">
+                    <li class="breadcrumb-item" ><a href="<?php echo ADMIN;?>"><i class="fa fa-dashboard"></i> Главная</a></li>
+                    <li class="breadcrumb-item" ><a href="<?php echo ADMIN;?>/category">Список категорий</a></li>
+                    <li class="breadcrumb-item active">Новая категория</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Main content -->
 <section class="content">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 p-0">
             <div class="box">
                 <form action="<?php echo ADMIN;?>/category/add" method="post" data-toggle="validator">
                     <div class="box-body">
@@ -47,49 +58,53 @@
                                 <input type="text" name="description" class="form-control" id="description" placeholder="Описание">
                             </div>
                         </div>
+
+                    </div>
+                    <div class="row m-0">
                         <div class="col-md-3">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <label for="description">Изображение на сайте</label>
-                                    <div class="box box-primary box-solid file-upload">
-                                        <div class="box-header">
-                                            <h3 class="box-title">Базовое изображение</h3>
-                                        </div>
-                                        <div class="box-body">
-                                            <div id="single" class="btn btn-default" data-url="category/add-image" data-name="single">Выбрать файл</div>
-                                            <div class="single"></div>
-                                        </div>
-                                        <div class="overlay">
-                                            <i class="fa fa-refresh fa-spin"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                          <div class="card">
+                              <div class="form-group">
+                                  <div class="col-md-12">
+                                      <div class="box box-primary box-solid file-upload text-center">
+                                          <div class="box-header mt-3">
+                                              <h3 class="box-title">Базовое изображение</h3>
+                                          </div>
+                                          <div class="box-body mt-3">
+                                              <div id="single" class="btn btn-inverse mb-3" data-url="category/add-image" data-name="single">Выбрать файл</div>
+                                              <div class="single"></div>
+                                          </div>
+                                          <div class="overlay">
+                                              <i class="fa fa-refresh fa-spin"></i>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
                         </div>
                         <div class="col-md-3">
+                            <div class="card">
                             <div class="form-group">
-                                <div class="col-md-12">
-                                    <label for="description">Изображение в меню</label>
-                                    <div class="box box-primary box-solid file-upload">
-                                        <div class="box-header">
-                                            <h3 class="box-title">Изображение превью</h3>
-                                        </div>
-                                        <div class="box-body">
-                                            <div id="single-min" class="btn btn-default w-100" data-url="category/add-image" data-name="single-min">Выбрать файл</div>
-                                            <div class="single-min"></div>
-                                        </div>
-                                        <div class="overlay">
-                                            <i class="fa fa-refresh fa-spin"></i>
-                                        </div>
-                                    </div>
-                                </div>
+                                  <div class="col-md-12">
+                                      <div class="box box-primary box-solid file-upload text-center">
+                                          <div class="box-header mt-3">
+                                              <h3 class="box-title">Изображение превью</h3>
+                                          </div>
+                                          <div class="box-body mt-3">
+                                              <div id="single-min" class=" btn btn-inverse mb-3" data-url="category/add-image" data-name="single-min">Выбрать файл</div>
+                                              <div class="single-min"></div>
+                                          </div>
+                                          <div class="overlay">
+                                              <i class="fa fa-refresh fa-spin"></i>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
                             </div>
                         </div>
                     </div>
-
                       <div class="box-footer">
                           <div class="col-md-12">
-                          <button type="submit" class="btn btn-lg btn-primary">Добавить</button>
+                          <button type="submit" class="btn btn-success">Добавить</button>
                           </div>
                       </div>
 

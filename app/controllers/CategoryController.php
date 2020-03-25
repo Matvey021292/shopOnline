@@ -37,19 +37,48 @@ class CategoryController extends AppController
         $sql_part = '';
         if (!empty($_GET['filter'])) {
             $filter = Filter::getFilter();
-            if ($filter){
+            $sort = Category::getSort();
+            if ($filter) {
                 $cnt = Filter::getCountGroups($filter);
-                $sql_part = "AND id IN (SELECT product_id FROM attribute_product WHERE attr_id IN ($filter) GROUP BY product_id HAVING COUNT(product_id) = $cnt)";
+                if ($sort === 'cheap') {
+                    $sql_part = "AND id IN (SELECT product_id FROM attribute_product WHERE attr_id IN ($filter)  GROUP BY product_id HAVING COUNT(product_id) = $cnt) ORDER BY price";
+                } else if ($sort === 'expensive') {
+                    $sql_part = "AND id IN (SELECT product_id FROM attribute_product WHERE attr_id IN ($filter)  GROUP BY product_id HAVING COUNT(product_id) = $cnt) ORDER BY price DESC";
+                } else if ($sort === 'popularity') {
+                    $sql_part = "AND id IN (SELECT product_id FROM attribute_product WHERE attr_id IN ($filter)  GROUP BY product_id HAVING COUNT(product_id) = $cnt) ";
+                } else if ($sort === 'novelty') {
+                    $sql_part = "AND id IN (SELECT product_id FROM attribute_product WHERE attr_id IN ($filter)  GROUP BY product_id HAVING COUNT(product_id) = $cnt) ORDER BY data";
+                } else if ($sort === 'rank') {
+                    $sql_part = "AND id IN (SELECT product_id FROM attribute_product WHERE attr_id IN ($filter)  GROUP BY product_id HAVING COUNT(product_id) = $cnt) ORDER BY rating";
+                } else {
+                    $sql_part = "AND id IN (SELECT product_id FROM attribute_product WHERE attr_id IN ($filter)  GROUP BY product_id HAVING COUNT(product_id) = $cnt) ";
+                }
             }
 
-
+        } else {
+            if (!empty($_GET['sort'])) {
+                $sort = Category::getSort();
+                if ($sort === 'cheap') {
+                    $sql_part = "ORDER BY price";
+                } else if ($sort === 'expensive') {
+                    $sql_part = "ORDER BY price DESC";
+                } else if ($sort === 'popularity') {
+                    $sql_part = " ";
+                } else if ($sort === 'novelty') {
+                    $sql_part = "ORDER BY data";
+                } else if ($sort === 'rank') {
+                    $sql_part = "ORDER BY rating";
+                } else {
+                    $sql_part = " ";
+                }
+            }
         }
 
 
         $total = \R::count('product', "category_id IN ($ids) $sql_part");
         $pagination = new Pagination($page, $perpage, $total);
         $start = $pagination->getStart();
-        $products = \R::find('product', "status = '1' AND category_id IN ($ids) $sql_part LIMIT $start, $perpage");
+        $products = \R::find('product', "status = '1' AND category_id IN ($ids) $sql_part LIMIT $start , $perpage");
         if ($this->isAjax()) {
             $this->loadView('filter', compact('products', 'category', 'total', 'pagination'));
         }

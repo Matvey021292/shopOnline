@@ -1,0 +1,29 @@
+.carousel-thumbnails .carousel-indicators li{
+    margin: 0 2px !important;
+    background: transparent;
+}
+.single-page .carousel-indicators{
+    display: flex;
+    flex-direction: column;
+
+}
+.single-page  .container ol.carousel-indicators{
+    top: 0;
+    bottom: auto;
+    width: auto;
+    left: 0;
+    transform: none;
+    right: auto;
+}
+.single-page .carousel-indicators li{
+    margin-bottom: 10px !important;
+    width: auto;
+}
+.single-page .carousel-indicators li img{
+    max-width: 25px;
+    margin: 0 !important;
+}
+.drift-zoom-pane{
+    background: #fff !important;
+}
+

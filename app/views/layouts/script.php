@@ -1,0 +1,23 @@
+<script src="/js/jquery_min.js"></script>
+<!--<script src="/js/wow.js"></script>-->
+<script src="/js/bootstrap.js"></script>
+<script src="/js/iziToast.min.js"></script>
+
+<script src="/js/modernizr.js"></script>
+<script src="/js/jquery.magnific-popup.js"></script>
+<script src="/js/jquery.dlmenu.js"></script>
+<script src="/js/jquery.sticky.js"></script>
+<script src="/js/jquery.menu-aim.js"></script>
+<script src="/js/camera.min.js"></script>
+<script src="/js/jquery.easing.1.3.js"></script>
+<script src="/js/owl.carousel.js"></script>
+<script src="/js/custom.js"></script>
+<script src="/js/menu/hoverIntent.js"></script>
+<!--<script src="/js/menu/superfish.min.js"></script>-->
+<script src="/js/typeit.js"></script>
+<script src="/js/typeahead.bundle.js"></script>
+<script type="text/javascript"
+<script src="/js/validator.min.js"></script>
+<!--    <script src="/js/material.js"></script>-->
+<script src="/js/switchery.min.js"></script>
+<script src="/js/main.js"></script>

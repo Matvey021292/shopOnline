@@ -17,6 +17,10 @@ class UserController extends AppController
     public function loginAdminAction()
     {
         if (!empty($_POST)) {
+           if (isset($_SESSION['auth_login'])){
+               $_SESSION['auth_login'] = $_POST['login'];
+               $_SESSION['auth_password'] = $_POST['password'];
+           }
             $user = new User();
             if ($user->login(true)) {
                 $_SESSION['success'] = "Вы успешно авторизированы";
@@ -72,7 +76,7 @@ class UserController extends AppController
     public function indexAction()
     {
         $page = isset($_GET['page']) ? $_GET['page'] : '1';
-        $perpage = 3;
+        $perpage = 20;
         $count = \R::count('user');
         $pagination = new Pagination($page, $perpage, $count);
         $start = $pagination->getStart();
